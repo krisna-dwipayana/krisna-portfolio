@@ -114,7 +114,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* <-- Ubah vh jadi dvh di sini */
   object-fit: cover;
   z-index: 0;
 }
@@ -124,8 +124,8 @@ html, body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgba(10, 15, 25, 0.62); /* Ketebalan overlay gelap */
+  height: 100dvh; /* <-- Ubah vh jadi dvh di sini juga */
+  background: rgba(10, 15, 25, 0.62); 
   z-index: 1;
 }
 /* ----------------------------------------------- */
