@@ -108,28 +108,29 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- KODE VIDEO BACKGROUND GLOBAL --- */
+/* --- KODE VIDEO BACKGROUND GLOBAL (REVISI) --- */
 .global-bg-video {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh; /* <-- Ubah vh jadi dvh di sini */
+  top: -10%; /* Tarik sedikit ke atas */
+  left: -10%; /* Tarik sedikit ke kiri */
+  width: 120%; /* Lebihkan dari ukuran layar */
+  height: 120%; /* Lebihkan dari ukuran layar */
   object-fit: cover;
   z-index: 0;
+  pointer-events: none; /* Biar video nggak bisa di-klik */
 }
 
 .global-video-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh; /* <-- Ubah vh jadi dvh di sini juga */
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
   background: rgba(10, 15, 25, 0.62); 
   z-index: 1;
+  pointer-events: none;
 }
 /* ----------------------------------------------- */
-
 .section-subtitle, .typing-text, code { font-family: 'Fira Code', monospace; }
 
 .app-container { min-height: 100vh; display: flex; flex-direction: column; position: relative; z-index: 2; }
