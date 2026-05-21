@@ -40,9 +40,8 @@ onMounted(() => {
         An enthusiastic Information Technology student passionate about turning raw data into meaningful insights. Currently exploring the world of data analytics, machine learning, and data visualization through academic projects and self-learning. Eager to grow, collaborate, and contribute as a future data professional.
       </p>
       <div class="hero-buttons">
-        <a href="#projects" class="btn-primary" style="text-decoration: none; display: inline-block; text-align: center;">View Projects</a>
-        
-        <a href="/Freshgrad_KRISNA DWIPAYANA.pdf" download="Freshgrad_KRISNA DWIPAYANA.pdf" class="btn-secondary" style="text-decoration: none; display: inline-block; text-align: center;">Download CV</a>
+        <a href="#projects" class="hero-btn btn-primary">View Projects</a>
+        <a href="/Freshgrad_KRISNA DWIPAYANA.pdf" download class="hero-btn btn-secondary">Download CV</a>
       </div>
     </div>
 
@@ -117,39 +116,58 @@ onMounted(() => {
   text-align: justify;
 }
 
+/* ========================================= */
+/* --- STYLE TOMBOL ELEGAN (BARU) --- */
+/* ========================================= */
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px; 
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
-  padding: 0.8rem 2rem;
-  background-color: var(--accent-color);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: #0ea5e9;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45);
 }
 
 .btn-secondary {
-  padding: 0.8rem 2rem;
-  background-color: transparent;
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.03); 
+  color: #10b981;
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(56, 189, 248, 0.1); 
+  transform: translateY(-3px);
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
 }
+/* ========================================= */
 
 /* --- BAGIAN FOTO PROFIL ELEGAN --- */
 .hero-image {
@@ -208,7 +226,14 @@ onMounted(() => {
   }
 
   .hero-buttons {
-    justify-content: center; 
+    justify-content: center;
+    /* Tambahan biar di layar sempit banget tombolnya tetep rapi */
+    gap: 1rem; 
+  }
+  
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
   }
 
   .image-border {
