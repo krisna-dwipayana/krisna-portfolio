@@ -109,26 +109,25 @@ html, body {
 }
 
 /* --- KODE VIDEO BACKGROUND GLOBAL (REVISI) --- */
+/* --- KODE VIDEO BACKGROUND GLOBAL (REVISI GPU HACK) --- */
 .global-bg-video {
-  position: fixed;
-  top: -10%; /* Tarik sedikit ke atas */
-  left: -10%; /* Tarik sedikit ke kiri */
-  width: 120%; /* Lebihkan dari ukuran layar */
-  height: 120%; /* Lebihkan dari ukuran layar */
-  object-fit: cover;
-  z-index: 0;
-  pointer-events: none; /* Biar video nggak bisa di-klik */
-}
-
-.global-video-overlay {
   position: fixed;
   top: -10%;
   left: -10%;
   width: 120%;
   height: 120%;
-  background: rgba(10, 15, 25, 0.62); 
-  z-index: 1;
+  object-fit: cover;
+  z-index: 0;
   pointer-events: none;
+  
+  /* --- TAMBAHAN MANTRA GPU ANTI-GLITCH --- */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  will-change: transform;
 }
 /* ----------------------------------------------- */
 .section-subtitle, .typing-text, code { font-family: 'Fira Code', monospace; }
