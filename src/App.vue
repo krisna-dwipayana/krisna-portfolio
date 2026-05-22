@@ -37,11 +37,13 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- Jadi ini — video dibungkus wrapper -->
+<div class="global-bg-wrapper">
   <video autoplay loop muted playsinline class="global-bg-video">
     <source src="./assets/bg-91.mp4" type="video/mp4">
   </video>
-  
-  <div class="global-video-overlay"></div>
+</div>
+<div class="global-video-overlay"></div>
 
   <div class="app-container">
     <nav class="navbar">
@@ -126,31 +128,38 @@ html, body {
 /* ========================================================= */
 /* --- REVISI TOTAL: KODE VIDEO GLOBAL ANTI-TV BUTUT --- */
 /* ========================================================= */
-.global-bg-video {
+.global-bg-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 0;
-  pointer-events: none;
+  overflow: hidden;           /* ini yang kunci — clip di wrapper */
+  transform: translateZ(0);   /* GPU layer di wrapper, bukan video */
+}
 
-  /* Cukup ini saja, tidak perlu yang lain */
-  transform: translateZ(0);
+.global-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);  /* centering tanpa GPU trick */
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .global-video-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(10, 15, 25, 0.6);
   z-index: 1;
   pointer-events: none;
-  /* Hapus semua GPU trick dari overlay */
 }
+
 
 .section-subtitle, .typing-text, code { font-family: 'Fira Code', monospace; }
 
