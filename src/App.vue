@@ -102,25 +102,26 @@ html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
-  background-color: #05100c; /* Warna cadangan kalau video glitch */
+  background-color: #05100c; 
   color: var(--text-primary);
   font-family: 'Inter', sans-serif; 
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- KODE VIDEO BACKGROUND GLOBAL (REVISI) --- */
-/* --- KODE VIDEO BACKGROUND GLOBAL (REVISI GPU HACK) --- */
+/* ========================================================= */
+/* --- KODE VIDEO BACKGROUND GLOBAL (REVISI GPU + 110%) --- */
+/* ========================================================= */
 .global-bg-video {
   position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
+  top: -5%; /* Digeser setengah dari 10% biar center */
+  left: -5%;
+  width: 110%; /* Lebih besar 10% dari layar */
+  height: 110%;
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
   
-  /* --- TAMBAHAN MANTRA GPU ANTI-GLITCH --- */
+  /* Mantra GPU Anti-Glitch */
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -129,7 +130,20 @@ html, body {
   -webkit-perspective: 1000px;
   will-change: transform;
 }
-/* ----------------------------------------------- */
+
+/* --- OVERLAY GELAP YANG SEBELUMNYA HILANG --- */
+.global-video-overlay {
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background: rgba(10, 15, 25, 0.85); /* 0.85 = tingkat kegelapan 85% */
+  z-index: 1;
+  pointer-events: none;
+}
+/* ========================================================= */
+
 .section-subtitle, .typing-text, code { font-family: 'Fira Code', monospace; }
 
 .app-container { min-height: 100vh; display: flex; flex-direction: column; position: relative; z-index: 2; }
