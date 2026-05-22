@@ -127,46 +127,30 @@ html, body {
 /* --- REVISI TOTAL: KODE VIDEO GLOBAL ANTI-TV BUTUT --- */
 /* ========================================================= */
 .global-bg-video {
-  /* Tetap pakai trik 108% (karena udah aman dari bug hitam) */
   position: fixed;
-  top: -4%;
-  left: -4%;
-  width: 108%;
-  height: 108%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
 
-  /* --- MANTRA GPU ANTI-TEARING (DITAMBAH AGAR LEBIH AGRESIF) --- */
-  transform: translate3d(0, 0, 0); /* Pemicu utama GPU rendering */
-  will-change: transform, opacity; /* Mantar sakti: kasih tau browser kalau ini akan berubah terus */
-  backface-visibility: hidden;    /* Mencegah glitch saat diputar */
-  -webkit-backface-visibility: hidden;
-  perspective: 1000px;             /* Memaksa browser membuat layer 3D terpisah */
-  -webkit-perspective: 1000px;
+  /* Cukup ini saja, tidak perlu yang lain */
+  transform: translateZ(0);
 }
 
 .global-video-overlay {
-  /* Samain ukurannya sama videonya */
   position: fixed;
-  top: -4%;
-  left: -4%;
-  width: 108%;
-  height: 108%;
-  
-  /* Kecerahan tetap aman di 0.6 */
-  background: rgba(10, 15, 25, 0.6); 
-  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 25, 0.6);
   z-index: 1;
   pointer-events: none;
-
-  /* --- PASANG JUGA MANTRA GPU KE OVERLAY BIAR KOMPOSISINYA SEMPURNA --- */
-  transform: translate3d(0, 0, 0);
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  /* Hapus semua GPU trick dari overlay */
 }
-/* ========================================================= */
 
 .section-subtitle, .typing-text, code { font-family: 'Fira Code', monospace; }
 
