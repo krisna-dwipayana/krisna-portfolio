@@ -117,17 +117,20 @@ html, body {
 /* ========================================================= */
 /* --- KODE VIDEO BACKGROUND GLOBAL (BALIK KE 110% ANTI-BUG) --- */
 /* ========================================================= */
+/* ========================================================= */
+/* --- KODE VIDEO BACKGROUND GLOBAL (UKURAN NORMAL) --- */
+/* ========================================================= */
 .global-bg-video {
   position: fixed;
-  top: -5%;    /* Geser ke atas dikit */
-  left: -5%;   /* Geser ke kiri dikit */
-  width: 110%; /* Lebihin 10% dari layar */
-  height: 110%; /* Lebihin 10% dari layar */
+  top: 0;    /* Balikin ke pojok atas */
+  left: 0;   /* Balikin ke pojok kiri */
+  width: 100vw;  /* Pas 100% lebar layar */
+  height: 100vh; /* Pas 100% tinggi layar */
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
   
-  /* Mantra GPU Anti-Glitch */
+  /* Mantra GPU Anti-Glitch (Tetap dipakai ya biar GPU HP aman) */
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -137,15 +140,16 @@ html, body {
   will-change: transform;
 }
 
-/* --- OVERLAY GELAP (TETAP TERANG 0.6, UKURAN 110%) --- */
+/* --- OVERLAY GELAP (DIKURANGIN BIAR LEBIH TERANG) --- */
 .global-video-overlay {
   position: fixed;
-  top: -5%;
-  left: -5%;
-  width: 110%;
-  height: 110%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   
-  background: rgba(10, 15, 25, 0.6); /* Kecerahan tetap aman */
+  /* --- REVISI: Ubah angka 0.85 jadi 0.6 --- */
+  background: rgba(10, 15, 25, 0.6); 
   
   z-index: 1;
   pointer-events: none;
