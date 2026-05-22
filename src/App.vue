@@ -38,7 +38,7 @@ onMounted(() => {
 
 <template>
   <video autoplay loop muted playsinline class="global-bg-video">
-    <source src="./assets/bg-8.mp4" type="video/mp4">
+    <source src="./assets/bg-91.mp4" type="video/mp4">
   </video>
   
   <div class="global-video-overlay"></div>
@@ -114,17 +114,20 @@ html, body {
 /* ========================================================= */
 /* --- KODE VIDEO BACKGROUND GLOBAL (UKURAN NORMAL) --- */
 /* ========================================================= */
+/* ========================================================= */
+/* --- KODE VIDEO BACKGROUND GLOBAL (BALIK KE 110% ANTI-BUG) --- */
+/* ========================================================= */
 .global-bg-video {
   position: fixed;
-  top: 0;    /* Balikin ke pojok atas */
-  left: 0;   /* Balikin ke pojok kiri */
-  width: 100vw;  /* Pas 100% lebar layar */
-  height: 100vh; /* Pas 100% tinggi layar */
+  top: -5%;    /* Geser ke atas dikit */
+  left: -5%;   /* Geser ke kiri dikit */
+  width: 110%; /* Lebihin 10% dari layar */
+  height: 110%; /* Lebihin 10% dari layar */
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
   
-  /* Mantra GPU Anti-Glitch (Tetap dipakai ya biar GPU HP aman) */
+  /* Mantra GPU Anti-Glitch */
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -134,16 +137,15 @@ html, body {
   will-change: transform;
 }
 
-/* --- OVERLAY GELAP (DIKURANGIN BIAR LEBIH TERANG) --- */
+/* --- OVERLAY GELAP (TETAP TERANG 0.6, UKURAN 110%) --- */
 .global-video-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   
-  /* --- REVISI: Ubah angka 0.85 jadi 0.6 --- */
-  background: rgba(10, 15, 25, 0.6); 
+  background: rgba(10, 15, 25, 0.6); /* Kecerahan tetap aman */
   
   z-index: 1;
   pointer-events: none;
