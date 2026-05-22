@@ -13,7 +13,6 @@ const categories = [
   'Soft Skills'
 ]
 
-// Data tools/skills
 const skillsData = {
   'Prompting & Artificial Intelligence': [
     { name: 'Gemini', src: '/icons/gemini.svg', type: 'image' },
@@ -74,7 +73,6 @@ const skillsData = {
   ]
 }
 
-// Data penjelasan (Description) untuk masing-masing kategori
 const categoryDescriptions = {
   'Prompting & Artificial Intelligence': `
     <div class="workflow-steps">
@@ -157,7 +155,6 @@ const categoryDescriptions = {
       </button>
     </div>
 
-    <!-- FIX GLITCH: wrapper dengan background solid menutup celah antar card -->
     <div class="skills-grid-wrapper">
       <div class="skills-grid">
         <div 
@@ -168,7 +165,6 @@ const categoryDescriptions = {
           <i v-if="skill.type === 'icon'" :class="skill.class"></i>
           <img v-else-if="skill.type === 'image'" :src="skill.src" :alt="skill.name" class="skill-img" />
           <span v-else class="text-icon">{{ skill.icon }}</span>
-          
           <span>{{ skill.name }}</span>
         </div>
       </div>
@@ -182,7 +178,6 @@ const categoryDescriptions = {
 </template>
 
 <style scoped>
-/* FIX GLITCH #1: isolate stacking context dari video background */
 .skills-section {
   padding: 2rem 0;
   animation: fadeIn 0.8s ease-in-out;
@@ -241,18 +236,21 @@ const categoryDescriptions = {
   color: var(--accent-color);
 }
 
-/* FIX GLITCH #2: wrapper menutup celah gap antar card dengan background solid */
+/* FIX GLITCH: solid background + GPU layer sendiri di atas video */
 .skills-grid-wrapper {
   background-color: #07130f;
   border-radius: 12px;
   padding: 1rem;
+  transform: translateZ(0);   /* paksa GPU layer terpisah di atas video */
+  position: relative;
+  z-index: 3;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
-  animation: fadeIn 0.4s ease-in-out; 
+  /* HAPUS animation fadeIn dari sini — ini penyebab glitch saat tab diklik */
 }
 
 .skill-item {
