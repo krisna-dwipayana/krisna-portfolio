@@ -62,7 +62,7 @@ const skillsData = {
     { name: 'Vue.js', src: '/icons/vue.svg', type: 'image' },
     { name: 'Flutter', src: '/icons/flutter.svg', type: 'image' },
     { name: 'Dart', src: '/icons/dart.svg', type: 'image' },
-    { name: 'Node.js', src: '/icons/node.svg', type: 'image' }, // <-- Ini yang disesuaikan
+    { name: 'Node.js', src: '/icons/node.svg', type: 'image' },
     { name: 'phpMyAdmin', src: '/icons/phpmyadmin.svg', type: 'image' },
     { name: 'Netlify', src: '/icons/netlify.svg', type: 'image' },
     { name: 'Python', src: '/icons/piton.svg', type: 'image' }
@@ -79,93 +79,62 @@ const categoryDescriptions = {
   'Prompting & Artificial Intelligence': `
     <div class="workflow-steps">
       <p><strong>🎯 Task :</strong> I define specific, actionable objectives to ensure the AI focuses on delivering precise and relevant outputs without ambiguity.</p>
-      
       <p><strong>🗂️ Context :</strong> I provide comprehensive background information, target audience, and business goals to align the AI's response with the exact situation.</p>
-      
       <p><strong>📎 References :</strong> I supply specific examples and reference materials to guide the AI in mirroring the desired style, tone, and data formatting.</p>
-      
       <p><strong>✅ Evaluate :</strong> I establish strict constraints such as tone, length, and format to define clear criteria for a high-quality, immediately usable output.</p>
-      
       <p><strong>🔄 Iterate :</strong> I continuously review and refine prompts through an active feedback loop, adjusting instructions until the perfect result is achieved.</p>
     </div>
   `,
-  
   'Data Analytics & Business Intelligence': `
     <div class="workflow-steps">
       <p><strong>📥 Acquire :</strong> I gather data from multiple sources to build a comprehensive and reliable foundation for business analysis.</p>
-      
       <p><strong>🧩 Parse :</strong> I structure and format raw, unstructured data into a highly organized and standardized dataset.</p>
-      
       <p><strong>🧹 Filter :</strong> I meticulously clean the data, handling missing values and noise, to focus strictly on relevant KPIs.</p>
-      
       <p><strong>⛏️ Mine :</strong> I delve into the clean dataset to uncover hidden patterns, trends, and actionable strategic insights.</p>
-      
       <p><strong>📊 Represent :</strong> I translate complex numbers into compelling visual narratives through intuitive charts and dashboards.</p>
-      
       <p><strong>✨ Refine :</strong> I iterate on visual designs to eliminate clutter and ensure the core message is instantly clear to all stakeholders.</p>
-      
       <p><strong>🖱️ Interact :</strong> I build dynamic capabilities using tools like Power BI or Tableau, empowering decision-makers to explore the data independently.</p>
     </div>
   `,
-  
   'Data Science & Machine Learning': `
     <div class="workflow-steps">
       <p><strong>🎯 Business Understanding :</strong> I define the core problem and set clear objectives to ensure the project aligns directly with business needs.</p>
-      
       <p><strong>🔍 Data Understanding :</strong> I gather and explore the initial dataset to identify underlying patterns, anomalies, and potential quality issues.</p>
-      
       <p><strong>🛠️ Data Preparation :</strong> I clean, transform, and prepare the data to ensure high consistency and readiness for modeling.</p>
-      
       <p><strong>🤖 Modeling :</strong> I select and apply the most suitable algorithms to build robust predictive models that solve the business problem.</p>
-      
       <p><strong>✅ Evaluation:</strong> I assess the model's performance against technical metrics and its actual alignment with the initial business goals.</p>
     </div>
   `,
-  
-'Deep Learning & Neural Network': `
+  'Deep Learning & Neural Network': `
     <div class="workflow-steps">
       <p><strong>📥 Obtain :</strong> I acquire and aggregate large-scale, diverse datasets to provide a strong foundation for training complex neural architectures.</p>
-      
       <p><strong>🧹 Scrub :</strong> I clean, normalize, and preprocess raw data, applying augmentation techniques to enhance model robustness.</p>
-      
       <p><strong>🔍 Explore :</strong> I conduct exploratory data analysis (EDA) to visualize distributions and understand underlying dataset patterns.</p>
-      
       <p><strong>🧠 Model :</strong> I design and train neural network architectures, tuning hyperparameters to minimize loss and maximize accuracy.</p>
-      
       <p><strong>📊 Interpret :</strong> I evaluate model performance using metrics and explainability techniques to ensure actionable and reliable outcomes.</p>
     </div>
   `,
   'Quantitative Research': `
     <div class="workflow-steps">
       <p><strong>📌 Define :</strong> I identify the core research problem and formulate clear, testable hypotheses to ensure a scientifically rigorous study.</p>
-      
       <p><strong>📐 Design :</strong> I carefully design the research methodology and data collection instruments to guarantee high validity and reliability.</p>
-      
       <p><strong>📥 Collect :</strong> I systematically gather quantitative data using strict protocols to minimize bias and ensure accurate representation.</p>
-      
       <p><strong>🧮 Analyze :</strong> I conduct rigorous hypothesis testing using statistical software to uncover significant relationships and variations.</p>
-      
       <p><strong>🧠 Interpret :</strong> I translate raw statistical outputs into meaningful conclusions that provide genuine answers to the research questions.</p>
-      
       <p><strong>📢 Communicate :</strong> I synthesize complex statistical results into clear, accessible reports with actionable recommendations for all stakeholders.</p>
     </div>
   `,
   'Software Development': `
     <div class="workflow-steps">
       <p><strong>🌐 Web Development :</strong> I build responsive, dynamic, and scalable web applications using modern frameworks like Vue.js, Laravel, and Node.js.</p>
-      
       <p><strong>📱 Mobile Development :</strong> I design and develop cross-platform mobile applications using Flutter and Dart for seamless user experiences.</p>
-      
       <p><strong>☁️ Deployment :</strong> I deploy and manage projects efficiently using platforms like Vercel and Netlify to ensure high availability and performance.</p>
     </div>
   `,
-
   'Soft Skills': `
     <div class="workflow-steps">
       <p><strong>🤔 Critical Thinking :</strong> I objectively analyze data by questioning assumptions and identifying biases to ensure insights are logically sound.</p>
-      
       <p><strong>🧩 Problem Solving :</strong> I methodically break down complex challenges to identify root causes and design efficient, sustainable solutions.</p>
-      
       <p><strong>💬 Communication :</strong> I translate intricate technical findings into clear, compelling narratives that empower stakeholders to make data-driven decisions.</p>
     </div>
   `
@@ -188,17 +157,20 @@ const categoryDescriptions = {
       </button>
     </div>
 
-    <div class="skills-grid">
-      <div 
-        v-for="skill in skillsData[activeTab]" 
-        :key="skill.name" 
-        class="skill-item"
-      >
-        <i v-if="skill.type === 'icon'" :class="skill.class"></i>
-        <img v-else-if="skill.type === 'image'" :src="skill.src" :alt="skill.name" class="skill-img" />
-        <span v-else class="text-icon">{{ skill.icon }}</span>
-        
-        <span>{{ skill.name }}</span>
+    <!-- FIX GLITCH: wrapper dengan background solid menutup celah antar card -->
+    <div class="skills-grid-wrapper">
+      <div class="skills-grid">
+        <div 
+          v-for="skill in skillsData[activeTab]" 
+          :key="skill.name" 
+          class="skill-item"
+        >
+          <i v-if="skill.type === 'icon'" :class="skill.class"></i>
+          <img v-else-if="skill.type === 'image'" :src="skill.src" :alt="skill.name" class="skill-img" />
+          <span v-else class="text-icon">{{ skill.icon }}</span>
+          
+          <span>{{ skill.name }}</span>
+        </div>
       </div>
     </div>
 
@@ -210,11 +182,15 @@ const categoryDescriptions = {
 </template>
 
 <style scoped>
+/* FIX GLITCH #1: isolate stacking context dari video background */
 .skills-section {
   padding: 2rem 0;
   animation: fadeIn 0.8s ease-in-out;
   max-width: 1000px;
   margin: 0 auto;
+  isolation: isolate;
+  position: relative;
+  z-index: 2;
 }
 
 .section-title {
@@ -265,6 +241,13 @@ const categoryDescriptions = {
   color: var(--accent-color);
 }
 
+/* FIX GLITCH #2: wrapper menutup celah gap antar card dengan background solid */
+.skills-grid-wrapper {
+  background-color: rgba(7, 19, 15, 0.85);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -295,12 +278,11 @@ const categoryDescriptions = {
 .text-icon { font-size: 2rem; }
 .skill-img { width: 40px; height: 40px; object-fit: contain; }
 
-/* STYLING BARU UNTUK KOTAK PENJELASAN */
 .category-description {
   margin-top: 2.5rem;
   padding: 1.5rem;
-  background-color: rgba(16, 185, 129, 0.05); /* Latar hijau super tipis */
-  border-left: 4px solid var(--accent-color); /* Garis aksen di sebelah kiri */
+  background-color: rgba(16, 185, 129, 0.05);
+  border-left: 4px solid var(--accent-color);
   border-radius: 0 8px 8px 0;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -308,7 +290,6 @@ const categoryDescriptions = {
   animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Memastikan teks dari v-html bisa di-styling */
 :deep(.workflow-steps p) {
   margin-bottom: 1rem; 
 }
@@ -316,7 +297,7 @@ const categoryDescriptions = {
   margin-bottom: 0;
 }
 :deep(.workflow-steps strong) {
-  color: var(--text-primary); /* Agar tulisan bold-nya lebih terang */
+  color: var(--text-primary);
 }
 
 @keyframes fadeIn {
