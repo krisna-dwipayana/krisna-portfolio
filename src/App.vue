@@ -123,39 +123,48 @@ html, body {
 /* ========================================================= */
 /* --- KODE VIDEO BACKGROUND GLOBAL (BATAS TOLERANSI 108%) --- */
 /* ========================================================= */
+/* ========================================================= */
+/* --- REVISI TOTAL: KODE VIDEO GLOBAL ANTI-TV BUTUT --- */
+/* ========================================================= */
 .global-bg-video {
+  /* Tetap pakai trik 108% (karena udah aman dari bug hitam) */
   position: fixed;
-  top: -4%;      /* Geser 4% biar seimbang di tengah */
-  left: -4%;     /* Geser 4% biar seimbang di tengah */
-  width: 108%;   /* Lebihin 8% untuk toleransi address bar HP */
-  height: 108%;  /* Lebihin 8% untuk toleransi address bar HP */
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  height: 108%;
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
-  
-  /* Mantra GPU Anti-Glitch (Tetap dipakai ya biar GPU HP aman) */
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
+
+  /* --- MANTRA GPU ANTI-TEARING (DITAMBAH AGAR LEBIH AGRESIF) --- */
+  transform: translate3d(0, 0, 0); /* Pemicu utama GPU rendering */
+  will-change: transform, opacity; /* Mantar sakti: kasih tau browser kalau ini akan berubah terus */
+  backface-visibility: hidden;    /* Mencegah glitch saat diputar */
   -webkit-backface-visibility: hidden;
-  perspective: 1000px;
+  perspective: 1000px;             /* Memaksa browser membuat layer 3D terpisah */
   -webkit-perspective: 1000px;
-  will-change: transform;
 }
 
-/* --- OVERLAY GELAP (KECERAHAN 0.6 & UKURAN 108%) --- */
 .global-video-overlay {
+  /* Samain ukurannya sama videonya */
   position: fixed;
   top: -4%;
   left: -4%;
   width: 108%;
   height: 108%;
   
-  /* --- REVISI: Kecerahan aman di 0.6 --- */
+  /* Kecerahan tetap aman di 0.6 */
   background: rgba(10, 15, 25, 0.6); 
   
   z-index: 1;
   pointer-events: none;
+
+  /* --- PASANG JUGA MANTRA GPU KE OVERLAY BIAR KOMPOSISINYA SEMPURNA --- */
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 /* ========================================================= */
 
