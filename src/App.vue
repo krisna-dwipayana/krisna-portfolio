@@ -120,12 +120,15 @@ html, body {
 /* ========================================================= */
 /* --- KODE VIDEO BACKGROUND GLOBAL (UKURAN NORMAL) --- */
 /* ========================================================= */
+/* ========================================================= */
+/* --- KODE VIDEO BACKGROUND GLOBAL (BATAS TOLERANSI 108%) --- */
+/* ========================================================= */
 .global-bg-video {
   position: fixed;
-  top: 0;    /* Balikin ke pojok atas */
-  left: 0;   /* Balikin ke pojok kiri */
-  width: 100vw;  /* Pas 100% lebar layar */
-  height: 100vh; /* Pas 100% tinggi layar */
+  top: -4%;      /* Geser 4% biar seimbang di tengah */
+  left: -4%;     /* Geser 4% biar seimbang di tengah */
+  width: 108%;   /* Lebihin 8% untuk toleransi address bar HP */
+  height: 108%;  /* Lebihin 8% untuk toleransi address bar HP */
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
@@ -140,15 +143,15 @@ html, body {
   will-change: transform;
 }
 
-/* --- OVERLAY GELAP (DIKURANGIN BIAR LEBIH TERANG) --- */
+/* --- OVERLAY GELAP (KECERAHAN 0.6 & UKURAN 108%) --- */
 .global-video-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: -4%;
+  left: -4%;
+  width: 108%;
+  height: 108%;
   
-  /* --- REVISI: Ubah angka 0.85 jadi 0.6 --- */
+  /* --- REVISI: Kecerahan aman di 0.6 --- */
   background: rgba(10, 15, 25, 0.6); 
   
   z-index: 1;
