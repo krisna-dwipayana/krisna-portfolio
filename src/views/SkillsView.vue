@@ -243,7 +243,7 @@ const categoryDescriptions = {
 
 /* FIX GLITCH #2: wrapper menutup celah gap antar card dengan background solid */
 .skills-grid-wrapper {
-  background-color: rgba(7, 19, 15, 0.85);
+  background-color: #07130f;
   border-radius: 12px;
   padding: 1rem;
 }
