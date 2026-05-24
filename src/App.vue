@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
   <div class="global-bg-wrapper">
     <video autoplay loop muted playsinline class="global-bg-video">
-      <source src="./assets/bg-91.mp4" type="video/mp4">
+      <source src="./assets/bg-111.mp4" type="video/mp4">
     </video>
     <div class="global-video-overlay"></div>
   </div>
