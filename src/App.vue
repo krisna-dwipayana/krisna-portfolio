@@ -144,6 +144,7 @@ html, body {
   inset: 0;
   z-index: 2;
   overflow-y: auto;
+  overflow-x: hidden; /* ← FIX: mencegah scroll ke samping */
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
@@ -172,7 +173,7 @@ html, body {
 .nav-brand { font-size: 1.6rem; font-weight: 700; }
 .nav-brand span { color: var(--accent-color); }
 
-.nav-links { display: flex; gap: 2.5rem; }
+.nav-links { display: none; gap: 2.5rem; } /* ← FIX: hidden by default, hanya muncul via hamburger */
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
@@ -193,7 +194,7 @@ html, body {
 .nav-links a.active-link::after { width: 100%; }
 
 .hamburger {
-  display: none;
+  display: flex; /* ← FIX: selalu tampil, bukan display: none */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -220,8 +221,6 @@ html, body {
   .navbar { padding: 1.2rem 5%; }
   .content-wrapper { padding: 0 5%; }
 
-  .hamburger { display: flex; }
-
   .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .hamburger.active span:nth-child(2) { opacity: 0; }
   .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -232,7 +231,7 @@ html, body {
     flex-direction: column; justify-content: center; align-items: center;
     transition: right 0.4s ease; box-shadow: -5px 0 15px rgba(0,0,0,0.5);
   }
-  .nav-links.nav-active { right: 0; }
+  .nav-links.nav-active { right: 0; display: flex; } /* ← tampil saat aktif */
   .nav-links a { font-size: 1.2rem; }
 }
 </style>
