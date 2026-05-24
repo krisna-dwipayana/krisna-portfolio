@@ -96,13 +96,14 @@ onMounted(() => {
 
 /* KUNCI FIX GLITCH: body tidak scroll, scroll dipindah ke .app-container */
 html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #05100c;
+  background-color: #05100c; 
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; 
   -webkit-font-smoothing: antialiased;
+  
+  /* --- TAMBAHAN KUNCI ANTI-SCROLL SAMPING --- */
+  overflow-x: hidden; 
+  width: 100%;
 }
 
 /* Video benar-benar diam, tidak perlu di-composite ulang saat scroll */
