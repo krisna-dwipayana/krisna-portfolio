@@ -171,9 +171,6 @@ const categoryDescriptions = {
     </div>
 
     <p class="methodology-title">The methodology I use :</p>
-    <div class="category-description">
-      <div v-html="categoryDescriptions[activeTab]"></div>
-    </div>
 
     <div class="category-description">
       <div v-html="categoryDescriptions[activeTab]"></div>
