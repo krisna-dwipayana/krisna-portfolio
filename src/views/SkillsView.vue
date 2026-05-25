@@ -170,6 +170,11 @@ const categoryDescriptions = {
       </div>
     </div>
 
+    <p class="methodology-title">The methodology I use :</p>
+    <div class="category-description">
+      <div v-html="categoryDescriptions[activeTab]"></div>
+    </div>
+
     <div class="category-description">
       <div v-html="categoryDescriptions[activeTab]"></div>
     </div>
@@ -297,6 +302,17 @@ const categoryDescriptions = {
 :deep(.workflow-steps strong) {
   color: var(--text-primary);
 }
+
+/* ===== TAMBAHKAN KODE INI ===== */
+.methodology-title {
+  font-family: 'Fira Code', monospace;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+/* ============================== */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

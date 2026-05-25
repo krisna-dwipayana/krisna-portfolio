@@ -132,7 +132,7 @@ html, body {
 .global-video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 15, 25, 0.65);
+  background: rgba(10, 15, 25, 0.6);
   pointer-events: none;
 }
 
