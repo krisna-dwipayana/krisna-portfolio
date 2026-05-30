@@ -173,12 +173,50 @@ html, body {
 .nav-brand { font-size: 1.6rem; font-weight: 700; }
 .nav-brand span { color: var(--accent-color); }
 
-.nav-links { display: none; gap: 2.5rem; } /* ← FIX: hidden by default, hanya muncul via hamburger */
+/* MENU HAMBURGER (Selalu Tampil) */
+.hamburger {
+  display: flex; 
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+.hamburger span {
+  width: 25px; height: 3px; background-color: var(--text-primary);
+  border-radius: 5px; transition: all 0.3s ease;
+}
+
+/* Animasi Hamburger -> X (Dikeluarkan dari @media agar jalan di laptop) */
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* SLIDE-IN MENU UNTUK LAPTOP & HP */
+.nav-links {
+  position: fixed; 
+  top: 0; 
+  right: -100%; /* Sembunyi di kanan */
+  width: 350px; /* Lebar menu di laptop */
+  height: 100vh;
+  background-color: rgba(5, 16, 12, 0.98);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  gap: 2.5rem;
+  transition: right 0.4s ease; 
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.nav-links.nav-active { right: 0; } /* Muncul saat aktif */
+
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -193,18 +231,6 @@ html, body {
 .nav-links a.active-link { color: var(--accent-color); font-weight: 600; }
 .nav-links a.active-link::after { width: 100%; }
 
-.hamburger {
-  display: flex; /* ← FIX: selalu tampil, bukan display: none */
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 1001;
-}
-.hamburger span {
-  width: 25px; height: 3px; background-color: var(--text-primary);
-  border-radius: 5px; transition: all 0.3s ease;
-}
-
 .content-wrapper { padding: 0 10%; flex-grow: 1; }
 .scroll-section { scroll-margin-top: 80px; padding-bottom: 6rem; }
 
@@ -217,21 +243,14 @@ html, body {
 .footer p { color: var(--text-secondary); font-size: 0.9rem; }
 .footer .footer-sub { font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7; }
 
+/* RESPONSIVITAS KHUSUS HP */
 @media (max-width: 768px) {
   .navbar { padding: 1.2rem 5%; }
   .content-wrapper { padding: 0 5%; }
 
-  .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .hamburger.active span:nth-child(2) { opacity: 0; }
-  .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
+  /* Di HP, sidebar dibikin lebih sempit menyesuaikan layar */
   .nav-links {
-    position: fixed; top: 0; right: -100%; width: 70vw; height: 100vh;
-    background-color: rgba(5, 16, 12, 0.95);
-    flex-direction: column; justify-content: center; align-items: center;
-    transition: right 0.4s ease; box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    width: 70vw; 
   }
-  .nav-links.nav-active { right: 0; display: flex; } /* ← tampil saat aktif */
-  .nav-links a { font-size: 1.2rem; }
 }
 </style>
