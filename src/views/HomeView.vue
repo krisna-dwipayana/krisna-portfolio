@@ -41,7 +41,7 @@ onMounted(() => {
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="hero-btn btn-primary">View Projects</a>
-        <a href="/Freshgrad_KRISNA DWIPAYANA.pdf" download class="hero-btn btn-secondary">Download CV</a>
+        <a href="/CV-ATS-KRISNA DWIPAYANA.pdf" download class="hero-btn btn-secondary">Download CV</a>
       </div>
     </div>
 
