@@ -122,13 +122,7 @@ const categoryDescriptions = {
       <p><strong>📢 Communicate :</strong> I synthesize complex statistical results into clear, accessible reports with actionable recommendations for all stakeholders.</p>
     </div>
   `,
-  'Software Development': `
-    <div class="workflow-steps">
-      <p><strong>🌐 Web Development :</strong> I build responsive, dynamic, and scalable web applications using modern frameworks like Vue.js, Laravel, and Node.js.</p>
-      <p><strong>📱 Mobile Development :</strong> I design and develop cross-platform mobile applications using Flutter and Dart for seamless user experiences.</p>
-      <p><strong>☁️ Deployment :</strong> I deploy and manage projects efficiently using platforms like Vercel and Netlify to ensure high availability and performance.</p>
-    </div>
-  `,
+  
   'Soft Skills': `
     <div class="workflow-steps">
       <p><strong>🤔 Critical Thinking :</strong> I objectively analyze data by questioning assumptions and identifying biases to ensure insights are logically sound.</p>
