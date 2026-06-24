@@ -9,7 +9,6 @@ const categories = [
   'Data Science & Machine Learning',
   'Deep Learning & Neural Network',
   'Quantitative Research',
-  'Software Development',
   'Soft Skills'
 ]
 
@@ -51,20 +50,6 @@ const skillsData = {
     { name: 'JASP', src: '/icons/jasp.svg', type: 'image' },
     { name: 'R Studio', src: '/icons/r-studio.svg', type: 'image' },
     { name: 'Mendeley', src: '/icons/mendeley.svg', type: 'image' }
-  ],
-  'Software Development': [
-    { name: 'HTML', src: '/icons/html.svg', type: 'image' },
-    { name: 'CSS', src: '/icons/css.svg', type: 'image' },
-    { name: 'JavaScript', src: '/icons/javascript.svg', type: 'image' },
-    { name: 'PHP', src: '/icons/php.svg', type: 'image' },
-    { name: 'Laravel', src: '/icons/laravel.svg', type: 'image' },
-    { name: 'Vue.js', src: '/icons/vue.svg', type: 'image' },
-    { name: 'Flutter', src: '/icons/flutter.svg', type: 'image' },
-    { name: 'Dart', src: '/icons/dart.svg', type: 'image' },
-    { name: 'Node.js', src: '/icons/node.svg', type: 'image' },
-    { name: 'phpMyAdmin', src: '/icons/phpmyadmin.svg', type: 'image' },
-    { name: 'Netlify', src: '/icons/netlify.svg', type: 'image' },
-    { name: 'Python', src: '/icons/piton.svg', type: 'image' }
   ],
   'Soft Skills': [
     { name: 'Critical Thinking', icon: '🤔', type: 'text' },
@@ -122,7 +107,6 @@ const categoryDescriptions = {
       <p><strong>📢 Communicate :</strong> I synthesize complex statistical results into clear, accessible reports with actionable recommendations for all stakeholders.</p>
     </div>
   `,
-  
   'Soft Skills': `
     <div class="workflow-steps">
       <p><strong>🤔 Critical Thinking :</strong> I objectively analyze data by questioning assumptions and identifying biases to ensure insights are logically sound.</p>
